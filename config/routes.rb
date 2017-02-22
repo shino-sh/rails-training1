@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   
   resources :posts do
-    resources :comments, only: [:new, :create, :destroy, :edit]
+    resources :comments, only: [:new, :create, :destroy, :edit, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

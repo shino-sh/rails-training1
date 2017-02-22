@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
   
   # 記事作成
@@ -30,6 +31,12 @@ class PostsController < ApplicationController
   end
   
   def update
+    @post      = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to root_path, notice: "投稿が完了しました"
+    else
+      redirect_to :back, notice: "編集に失敗しました"
+    end 
   end
   
   # StrongParamater rails4から
