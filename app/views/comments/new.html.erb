@@ -1,0 +1,12 @@
+<h1>新規コメント</h1>
+
+<%= form_for @comment, url: post_comments_path(@post) do |f| %>
+  <%= f.label :name, "名前" %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :content, "内容" %>
+  <%= f.text_field :content %>
+  
+  <%= f.hidden_field :post_id %>
+  <%= f.submit "投稿する" %>
+<% end %>

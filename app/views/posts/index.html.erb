@@ -3,6 +3,6 @@
 <ul>
 <% @posts.each do |post| %>
   <li><%= link_to(post.title, :controller => "posts", :action => "show", :id => post.id) %>&nbsp;
-  <%= link_to("削除", {:controller => "posts", :action => "delete", :id => post.id}, data:{:confirm => post.title + "を削除します"} ) %></li>
+  <%= link_to("削除", {:controller => "posts", :action => "destroy", :id => post.id}, data:{:confirm => post.title + "を削除します"} ) %></li>
 <% end %>
 </ul>

@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: "投稿が完了しました"
     else
-      redirect_to :back, notice: "投稿に失敗しました"
+      render :new
     end 
   end
   
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content)
   end
 
-  def delete
+  def destroy
     id          = params[:id]
     Post.find(id).destroy
     redirect_to root_path, notice: "削除しました" 
