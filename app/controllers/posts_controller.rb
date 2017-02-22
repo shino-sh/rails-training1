@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    id = params[:id]
+    id         = params[:id]
     @post      = Post.find(id)
     @comments  = @post.comments.all
   end
@@ -18,5 +18,8 @@ class PostsController < ApplicationController
   end
 
   def delete
+    id = params[:id]
+    Post.find(id).destroy
+    redirect_to root_path, notice: "削除しました" 
   end
 end

@@ -4,4 +4,5 @@
 <% @comments.each do |comment| %>
   <%= comment.name %><br>
   <%= comment.content %><br>
+  <%= link_to("削除", {:controller => "comments", :action => "delete", :id => comment.id}, data:{:confirm =>"コメントを削除します"} ) %><br>
 <% end %>

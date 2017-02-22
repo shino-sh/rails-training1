@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   
-  get 'show/:id',  to: 'posts#show'
+  get 'show',      to: 'posts#show'
   get 'edit',      to: 'posts#edit'
   get 'create',    to: 'posts#create'
   get 'delete',    to: 'posts#delete'

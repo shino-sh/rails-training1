@@ -6,5 +6,9 @@ class CommentsController < ApplicationController
   end
 
   def delete
+    id = params[:id]
+    Comment.find(id).destroy
+    flash[:success] = "削除しました"
+    redirect_to :back
   end
 end
