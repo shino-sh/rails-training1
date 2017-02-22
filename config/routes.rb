@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   
   get 'show',      to: 'posts#show'
   get 'edit',      to: 'posts#edit'
-  get 'create',    to: 'posts#create'
+  post 'create',   to: 'posts#create'
+  get 'new',       to: 'posts#new'
   get 'delete',    to: 'posts#delete'
   
   get 'comments/edit',   to: 'comments#edit'
