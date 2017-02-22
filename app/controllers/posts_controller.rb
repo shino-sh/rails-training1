@@ -2,12 +2,13 @@ class PostsController < ApplicationController
   
   # ブログ一覧表示
   def index
-    @posts = Post.all
+    @posts     = Post.all
   end
 
   def show
     id = params[:id]
-    @post = Post.where(id: id).first
+    @post      = Post.find(id)
+    @comments  = @post.comments.all
   end
 
   def edit

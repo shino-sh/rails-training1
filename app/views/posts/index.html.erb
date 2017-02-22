@@ -1,5 +1,7 @@
 <h1>課題1 簡単なブログ</h1>
 
+<ul>
 <% @posts.each do |post| %>
-  <%= link_to(post.title, :controller => "posts", :action => "show", :id => post.id) %>
+  <li><%= link_to(post.title, :controller => "posts", :action => "show", :id => post.id) %></li>
 <% end %>
+</ul>

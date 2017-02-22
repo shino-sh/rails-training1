@@ -1,3 +1,7 @@
-<h1>パラメーター取得</h1>
-<%= @post.title %><br>
+<h1><%= @post.title %></h1>
 <%= @post.content %>
+<h2>コメント</h2>
+<% @comments.each do |comment| %>
+  <%= comment.name %><br>
+  <%= comment.content %><br>
+<% end %>
